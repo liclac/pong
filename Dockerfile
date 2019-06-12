@@ -1,0 +1,6 @@
+FROM golang:1-alpine
+WORKDIR /go/src/github.com/liclac/pong
+COPY . .
+RUN go get -d -v ./...
+RUN go install -v ./...
+ENTRYPOINT ["pong"]
